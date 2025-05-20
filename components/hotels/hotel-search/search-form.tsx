@@ -1,24 +1,24 @@
-import type { Dispatch, SetStateAction } from "react"
-import type { Person } from "./index"
-import DestinationInput from "./destination-input"
-import DateSelector from "./date-selector"
-import PersonsSelector from "./persons-selector"
-import FilterOptions from "./filter-options"
-import SearchButton from "./search-button"
+import type { Dispatch, SetStateAction } from "react";
+import type { Person } from "./index";
+import DestinationInput from "./destination-input";
+import DateSelector from "./date-selector";
+import PersonsSelector from "./persons-selector";
+import FilterOptions from "./filter-options";
+import SearchButton from "./search-button";
 
 type SearchFormProps = {
-  destination: string
-  setDestination: Dispatch<SetStateAction<string>>
-  arrivalDate: Date
-  setArrivalDate: Dispatch<SetStateAction<Date>>
-  departureDate: Date
-  setDepartureDate: Dispatch<SetStateAction<Date>>
-  persons: Person
-  setPersons: Dispatch<SetStateAction<Person>>
-  handleChildrenChange: (value: number) => void
-  handleChildAgeChange: (index: number, age: string) => void
-  formatPersonsText: () => string
-}
+  destination: string;
+  setDestination: Dispatch<SetStateAction<string>>;
+  arrivalDate: Date;
+  setArrivalDate: Dispatch<SetStateAction<Date>>;
+  departureDate: Date;
+  setDepartureDate: Dispatch<SetStateAction<Date>>;
+  persons: Person;
+  setPersons: Dispatch<SetStateAction<Person>>;
+  handleChildrenChange: (value: number) => void;
+  handleChildAgeChange: (index: number, age: string) => void;
+  formatPersonsText: () => string;
+};
 
 export default function SearchForm({
   destination,
@@ -34,18 +34,29 @@ export default function SearchForm({
   formatPersonsText,
 }: SearchFormProps) {
   return (
-    <div className="max-w-6xl mx-auto px-4 -mt-16 relative z-10">
+    <div className="container max-w-screen-xl px-6 mx-auto -mt-16 relative z-10">
       <div className="bg-primary-900 rounded-xl shadow-2xl p-4 md:p-6">
         <div className="space-y-4">
           {/* Destination & Dates */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div className="md:col-span-2">
-              <DestinationInput destination={destination} setDestination={setDestination} />
+              <DestinationInput
+                destination={destination}
+                setDestination={setDestination}
+              />
             </div>
 
-            <DateSelector label="Arrivée" selectedDate={arrivalDate} setSelectedDate={setArrivalDate} />
+            <DateSelector
+              label="Arrivée"
+              selectedDate={arrivalDate}
+              setSelectedDate={setArrivalDate}
+            />
 
-            <DateSelector label="Départ" selectedDate={departureDate} setSelectedDate={setDepartureDate} />
+            <DateSelector
+              label="Départ"
+              selectedDate={departureDate}
+              setSelectedDate={setDepartureDate}
+            />
           </div>
 
           {/* Persons & Rooms */}
@@ -71,5 +82,5 @@ export default function SearchForm({
         </div>
       </div>
     </div>
-  )
+  );
 }

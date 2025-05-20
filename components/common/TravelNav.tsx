@@ -2,9 +2,9 @@
 
 import type React from "react";
 
-import { useState } from "react";
 import { Plane, Building2, Car } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 type NavOption = {
   id: string;
@@ -14,8 +14,8 @@ type NavOption = {
 };
 
 export default function TravelNav() {
-  const [activeOption, setActiveOption] = useState<string>("vols");
-
+  const pathname = usePathname();
+  const isActive = (option: string) => pathname === option;
   const navOptions: NavOption[] = [
     {
       id: "vols",
@@ -44,11 +44,11 @@ export default function TravelNav() {
           <Link
             key={option.id}
             href={option.link}
-            onClick={() => setActiveOption(option.id)}
             className={`
               flex shrink-0 items-center justify-center px-2 sm:px-4 py-2 sm:py-2 rounded-full text-sm font-medium transition-colors
               ${
-                activeOption === option.id
+                isActive(option.link) ||
+                (pathname == "/" && option.id == "vols")
                   ? "bg-primary text-white"
                   : "text-white border border-primary hover:bg-primary-800"
               }
