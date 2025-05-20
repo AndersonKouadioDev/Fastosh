@@ -1,6 +1,7 @@
 {
   "name": "Fastosh",
   "short_name": "Fastosh",
+  "description": "Nous sommes une plateforme en ligne dédiée à la réservation de billets de voyage en bus interurbains. Nous offrons aux utilisateurs la possibilité de rechercher et de comparer les meilleures compagnies de transport, les tarifs, ainsi que les niveaux de confort. En facilitant cette comparaison, nous permettons non seulement d'optimiser l'expérience des voyageurs, mais aussi de dynamiser l'activité des fournisseurs de services (compagnies de transport), tout en contribuant à une gestion simplifiée et plus efficace des réservations.",
   "icons": [
     {
       "src": "favicon/android-chrome-192x192.png",
