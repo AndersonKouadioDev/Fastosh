@@ -1,4 +1,3 @@
-import SiteInternationaux from "@/components/common/SiteInternationaux";
 import Faqs from "@/components/hotels/Faqs";
 import CtaCard from "@/components/common/CtaCard";
 import bg_3 from "@/public/images/background/bg_3.jpg";
@@ -20,7 +19,6 @@ export default function Hotel() {
           // }
         />
         <Faqs />
-        <SiteInternationaux />
       </div>
     </main>
   );

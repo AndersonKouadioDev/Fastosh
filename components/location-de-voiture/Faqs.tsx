@@ -9,30 +9,15 @@ export default function Faqs() {
   return (
     <div>
       <h2 className="lg:text-4xl text-2xl font-bold font-ibrand text-secondary">
-        Réservez des vols avec <span className="text-primary">Fastosh</span>
+        Trouver votre véhicule avec nous : FAQ
       </h2>
-      <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="mt-4 grid grid-cols-1 gap-4">
         <Accordion
           itemClasses={{
-            title: "font-bold",
+            title: "font-bold text-base sm:text-xl",
           }}
         >
-          {faqs.slice(0, 3).map((faq, index) => (
-            <AccordionItem
-              key={`${faq}-${index}`}
-              aria-label={`Accordion ${index + 1}`}
-              title={faq.title}
-            >
-              {faq.content}
-            </AccordionItem>
-          ))}
-        </Accordion>
-        <Accordion
-          itemClasses={{
-            title: "font-bold",
-          }}
-        >
-          {faqs.slice(3, 6).map((faq, index) => (
+          {faqs.map((faq, index) => (
             <AccordionItem
               key={`${faq}-${index}`}
               aria-label={`Accordion ${index + 1}`}
