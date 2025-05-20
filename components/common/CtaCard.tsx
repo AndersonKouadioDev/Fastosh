@@ -9,14 +9,19 @@ export default function CtaCard({
   title,
   subtitle,
   description,
+  buttonText,
 }: {
   image: StaticImageData;
   title: ReactNode;
   subtitle?: string;
   description?: string;
+  buttonText?: string;
 }) {
   return (
-    <div className="relative mt-4 min-h-[450px] md:h-[360px] lg:h-[460px] w-full overflow-hidden rounded-2xl mx-auto container px-4">
+    <div
+      onClick={() => {}}
+      className="relative mt-4 min-h-[450px] md:h-[360px] lg:h-[460px] w-full overflow-hidden rounded-2xl mx-auto container px-4 cursor-pointer"
+    >
       <Image
         src={image}
         alt="Vue panoramique sur l'océan au coucher du soleil"
@@ -37,14 +42,17 @@ export default function CtaCard({
         {description && (
           <p className="text-white text-sm font-bold mb-2">{description}</p>
         )}
-        <Button
-          variant="solid"
-          color="secondary"
-          size="sm"
-          className="mt-8 px-4 py-2 hidden sm:block rounded-lg text-base font-bold w-fit"
-        >
-          Chercher des vols dans le monde entier
-        </Button>
+        {buttonText && (
+          <div className="mt-8  hidden sm:block ">
+            <Button
+              variant="solid"
+              color="secondary"
+              className="px-4 rounded-lg text-base font-bold"
+            >
+              {buttonText}
+            </Button>
+          </div>
+        )}
       </div>
     </div>
   );

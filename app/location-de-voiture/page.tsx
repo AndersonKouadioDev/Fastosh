@@ -1,7 +1,7 @@
 import SiteInternationaux from "@/components/common/SiteInternationaux";
 import Faqs from "@/components/location-de-voiture/Faqs";
 import CtaCard from "@/components/common/CtaCard";
-import bg_3 from "@/public/images/background/bg_3.jpg";
+import bg_4 from "@/public/images/background/bg_4.jpg";
 import NavigationCta from "@/components/common/NavigationCta";
 import LocationDeVoitureSearch from "@/components/hotels/hotel-search";
 
@@ -12,12 +12,12 @@ export default function LocationDeVoiture() {
       <div className="flex min-h-screen p-6 lg:py-8 max-w-screen-xl mx-auto flex-col gap-8">
         <NavigationCta />
         <CtaCard
-          image={bg_3}
-          subtitle="Vous cherchez un véhicule ?"
-          title={<>Découvrez toutes les destinations</>}
-          // description={
-          //   "Trouvez et comparez les meilleures offres de location de voitures et de camionnettes partout dans le monde, où que vous soyez, en quelques secondes."
-          // }
+          image={bg_4}
+          title={<>Réservez une location de voiture sur notre appli</>}
+          description={
+            "Trouvez et comparez les meilleures offres de location de voitures et de camionnettes partout dans le monde, où que vous soyez, en quelques secondes."
+          }
+          buttonText="Télécharger l'appli"
         />
         <Faqs />
         <SiteInternationaux />

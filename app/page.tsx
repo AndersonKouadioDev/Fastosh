@@ -15,9 +15,7 @@ export default function Home() {
           image={bg_3}
           subtitle="Vous ne savez pas où partir ?"
           title={<>Découvrez toutes les destinations</>}
-          // description={
-          //   "Trouvez et comparez les meilleures offres de location de voitures et de camionnettes partout dans le monde, où que vous soyez, en quelques secondes."
-          // }
+          buttonText="Chercher des vols dans le monde entier"
         />
         <Faqs />
         <SiteInternationaux />
