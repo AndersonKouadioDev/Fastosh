@@ -10,7 +10,7 @@ export default function AppProvider({
 }) {
   return (
     <HeroUIProvider>
-      <NextThemesProvider attribute="class" defaultTheme="dark">
+      <NextThemesProvider attribute="class" defaultTheme="light">
         {children}
       </NextThemesProvider>
     </HeroUIProvider>

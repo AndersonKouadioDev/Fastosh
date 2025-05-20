@@ -1,0 +1,276 @@
+
+export interface FaqAccordionItem {
+    id: number;
+    title: string;
+    content: string;
+}
+
+export const faqs: FaqAccordionItem[] = [
+    {
+        id: 1,
+        title: "Comment fonctionne Fastosh ?",
+        content: "Fastosh est un moteur de recherche de vols, de voitures de location et d'hôtels. Nous parcourons le Web pour trouver les meilleurs prestataires de voyage et compagnies aériennes, afin que vous puissiez comparer les tarifs des vols et les autres prix au même endroit. Une fois que vous avez trouvé votre vol, votre voiture de location ou votre hôtel, il suffit de réserver directement auprès du prestataire.",
+    },
+    {
+        id: 2,
+        title: "Comment trouver le vol le moins cher avec Fastosh ?",
+        content: "Pour trouver des vols, c'est facile : chaque mois, plus de 100 millions de voyageurs avisés viennent sur notre site pour trouver des billets d'avion, des hôtels et des voitures de location pas chers. Voici quelques conseils simples pour tirer le meilleur parti de votre recherche de vol.\n\n" +
+            "<strong>Gagnez du temps et de l'argent.</strong> Qu'il s'agisse du vol le plus rapide ou du séjour le plus avantageux, vous pouvez choisir votre compagnie aérienne ou votre hôtel préférés en fonction des notes réelles des voyageurs et réserver instantanément.\n\n" +
+            "<strong>Cherchez dans le monde entier. Partez où vous voulez.</strong> Vous avez envie de voyager peu importe la destination ? Vous voulez découvrir un nouvel endroit ? Cherchez dans « <b>le monde entier</b> » pour trouver le vol le moins cher vers n'importe quelle destination le jour de votre choix.\n\n" +
+            "<strong>Trouvez les périodes les moins chères pour prendre un vol.</strong> Si vous avez une destination en tête et que vous voulez trouver le vol le moins cher, sélectionnez « <b>Mois le moins cher</b> » lors de votre recherche. Vous trouverez alors des vols le jour où ils sont les moins chers.",
+    },
+    {
+        id: 3,
+        title: "Vers quelles destinations puis-je actuellement réserver un vol ?",
+        content: "Si vous êtes à la recherche d'inspiration pour votre prochain voyage, utilisez notre fonctionnalité de <a href=\"transport/flights-from/CI\">recherche dans le monde entier</a> pour trouver un vol pas cher vers n'importe quelle destination.",
+    },
+    {
+        id: 4,
+        title: "Puis-je réserver mon vol avec Fastosh ?",
+        content: "Fastosh étant un moteur de recherche, une fois que vous avez trouvé votre billet d'avion, vous devez le réserver directement sur le site de la compagnie aérienne ou du prestataire de voyage. Vous avez ainsi la possibilité d'ajouter les informations nécessaires au programme de fidélité et de choisir les options de vol que vous préférez, telles que l'emplacement du siège.",
+    },
+    {
+        id: 5,
+        title: "Que se passe-t-il une fois que j'ai réservé mon vol ?",
+        content: "Votre e-mail de confirmation de réservation de vol et toutes les autres informations dont vous aurez besoin proviendront de la compagnie aérienne ou du prestataire avec qui vous avez réservé. Si vous avez des questions concernant le suivi de votre réservation, ou si vous souhaitez modifier ou annuler votre vol, adressez-vous à eux.",
+    },
+
+    {
+        id: 6,
+        title: "Peut-on rechercher aussi des hôtels sur Fastosh ?",
+        content: "Oui ! Vous pouvez utiliser la puissance de notre moteur de recherche de vols pour trouver l'hébergement idéal n'importe où.",
+    },
+    {
+        id: 7,
+        title: "Et louer une voiture ?",
+        content: "Vous pouvez également utiliser Fastosh pour rechercher et comparer des locations de véhicule pas chères en quelques secondes, puis récupérer votre voiture dès votre arrivée à l'aéroport.",
+    },
+    {
+        id: 8,
+        title: "Qu'est-ce qu'une alerte prix ?",
+        content: "Si vous créez une alerte de prix, nous surveillerons les tarifs des billets d'avion pour vous et vous informerons par e-mail ou par notification push via l'application de toute nouvelle hausse ou baisse de prix.",
+    },
+    {
+        id: 9,
+        title: "Puis-je réserver un billet d'avion flexible ?",
+        content: "Nous comprenons à quel point il est important d'avoir de la flexibilité pour les vacances. Comme il y a parfois des frais supplémentaires à régler pour avoir un billet d'avion modifiable, recherchez cette option lorsque vous effectuez votre réservation. Recherchez des hôtels et des options de location de voiture avec annulation gratuite afin de pouvoir réserver maintenant et modifier voire annuler plus tard si besoin.",
+    },
+    {
+        id: 10,
+        title: "Puis-je réserver des vols émettant moins de CO₂ ?",
+        content: "Oui. Depuis que nous avons commencé à afficher les émissions de CO₂ des vols (quand cette information est disponible), plus de 100 millions de voyageurs ont trouvé un billet d'avion émettant moins de CO₂ pour leur trajet.",
+    }
+];
+
+
+export interface SiteInternationaux {
+    country: string;
+    code: string;
+    url: string;
+    locale: string;
+    market: string;
+    labelText: string;
+    image_url: string;
+}
+
+export const siteInternationaux: SiteInternationaux[] = [
+    {
+        country: "Royaume-Uni",
+        code: "GB",
+        url: "#",
+        locale: "en-GB",
+        market: "UK",
+        labelText: "(GB) Cheap flights",
+        image_url: "https://js.skyscnr.com/images/country/flag/header/uk.png",
+    },
+    {
+        country: "Australie",
+        code: "AU",
+        url: "#",
+        locale: "en-GB",
+        market: "AU",
+        labelText: "(AU) Australia - Cheap flights",
+        image_url: "https://js.skyscnr.com/images/country/flag/header/au.png",
+    },
+    {
+        country: "Chine",
+        code: "CN",
+        url: "#",
+        locale: "zh-CN",
+        market: "CN",
+        labelText: "(CN) 中国 - 机票",
+        image_url: "https://js.skyscnr.com/images/country/flag/header/cn.png",
+    },
+    {
+        country: "Danemark",
+        code: "DK",
+        url: "#",
+        locale: "da-DK",
+        market: "DK",
+        labelText: "(DK) Flybilletter",
+        image_url: "https://js.skyscnr.com/images/country/flag/header/dk.png",
+    },
+    {
+        country: "Finlande",
+        code: "FI",
+        url: "#",
+        locale: "fi-FI",
+        market: "FI",
+        labelText: "(FI) Suomi - lennot",
+        image_url: "https://js.skyscnr.com/images/country/flag/header/fi.png",
+    },
+    {
+        country: "France",
+        code: "FR",
+        url: "#",
+        locale: "fr-FR",
+        market: "FR",
+        labelText: "(FR) France - vols",
+        image_url: "https://js.skyscnr.com/images/country/flag/header/fr.png",
+    },
+    {
+        country: "Allemagne",
+        code: "DE",
+        url: "#",
+        locale: "de-DE",
+        market: "DE",
+        labelText: "(DE) Deutschland - Flüge",
+        image_url: "https://js.skyscnr.com/images/country/flag/header/de.png",
+    },
+    {
+        country: "Inde",
+        code: "IN",
+        url: "#",
+        locale: "en-GB",
+        market: "IN",
+        labelText: "(IN) India - Flight tickets",
+        image_url: "https://js.skyscnr.com/images/country/flag/header/in.png",
+    },
+    {
+        country: "Irlande",
+        code: "IE",
+        url: "#",
+        locale: "en-GB",
+        market: "IE",
+        labelText: "(IE) Ireland - flights",
+        image_url: "https://js.skyscnr.com/images/country/flag/header/ie.png",
+    },
+    {
+        country: "Italie",
+        code: "IT",
+        url: "#",
+        locale: "it-IT",
+        market: "IT",
+        labelText: "(IT) Italia - voli",
+        image_url: "https://js.skyscnr.com/images/country/flag/header/it.png",
+    },
+    {
+        country: "Japon",
+        code: "JP",
+        url: "#",
+        locale: "ja-JP",
+        market: "JP",
+        labelText: "(JP) 日本 - 航空券",
+        image_url: "https://js.skyscnr.com/images/country/flag/header/jp.png",
+    },
+    {
+        country: "Mexique",
+        code: "MX",
+        url: "#",
+        locale: "es-MX",
+        market: "MX",
+        labelText: "(MX) México - vuelos",
+        image_url: "https://js.skyscnr.com/images/country/flag/header/mx.png",
+    },
+    {
+        country: "Pays-Bas",
+        code: "NL",
+        url: "#",
+        locale: "nl-NL",
+        market: "NL",
+        labelText: "(NL) Vliegtickets",
+        image_url: "https://js.skyscnr.com/images/country/flag/header/nl.png",
+    },
+    {
+        country: "Norvège",
+        code: "NO",
+        url: "#",
+        locale: "nb-NO",
+        market: "NO",
+        labelText: "(NO) Billige flybilletter",
+        image_url: "https://js.skyscnr.com/images/country/flag/header/no.png",
+    },
+    {
+        country: "Pologne",
+        code: "PL",
+        url: "#",
+        locale: "pl-PL",
+        market: "PL",
+        labelText: "(PL) Polska – tanie loty",
+        image_url: "https://js.skyscnr.com/images/country/flag/header/pl.png",
+    },
+    {
+        country: "Russie",
+        code: "RU",
+        url: "#",
+        locale: "ru-RU",
+        market: "RU",
+        labelText: "(RU) Россия - авиабилеты",
+        image_url: "https://js.skyscnr.com/images/country/flag/header/ru.png",
+
+    },
+    {
+        country: "Espagne",
+        code: "ES",
+        url: "#",
+        locale: "es-ES",
+        market: "ES",
+        labelText: "(ES) España - vuelos",
+        image_url: "https://js.skyscnr.com/images/country/flag/header/es.png",
+    },
+    {
+        country: "Suède",
+        code: "SE",
+        url: "#",
+        locale: "sv-SE",
+        market: "SE",
+        labelText: "(SE) Sverige - flyg",
+        image_url: "https://js.skyscnr.com/images/country/flag/header/se.png",
+    },
+    {
+        country: "Suisse",
+        code: "CH",
+        url: "#",
+        locale: "de-DE",
+        market: "CH",
+        labelText: "(CH) Schweiz - Flüge",
+        image_url: "https://js.skyscnr.com/images/country/flag/header/ch.png",
+    },
+    {
+        country: "Turquie",
+        code: "TR",
+        url: "#",
+        locale: "tr-TR",
+        market: "TR",
+        labelText: "(TR) Türkiye - uçak biletleri",
+        image_url: "https://js.skyscnr.com/images/country/flag/header/tr.png",
+    },
+    {
+        country: "Emirats arabes",
+        code: "AE",
+        url: "#",
+        locale: "en-US",
+        market: "AE",
+        labelText: "(AE) United Arab Emirates - flights",
+        image_url: "https://js.skyscnr.com/images/country/flag/header/ae.png",
+    },
+    {
+        country: "Etats-Unis",
+        code: "US",
+        url: "#",
+        locale: "en-US",
+        market: "US",
+        labelText: "(US) USA - flights",
+        image_url: "https://js.skyscnr.com/images/country/flag/header/us.png",
+    }
+];

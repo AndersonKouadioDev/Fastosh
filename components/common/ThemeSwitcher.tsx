@@ -1,9 +1,9 @@
-// app/components/ThemeSwitcher.tsx
 "use client";
 
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { Button } from "@heroui/react";
+import { Sun, Moon } from "lucide-react";
 
 export default function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
@@ -15,11 +15,24 @@ export default function ThemeSwitcher() {
 
   if (!mounted) return null;
 
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
   return (
-    <div>
-      The current theme is: {theme}
-      <Button onClick={() => setTheme("light")}>Light Mode</Button>
-      <Button onClick={() => setTheme("dark")}>Dark Mode</Button>
-    </div>
+    <Button
+      onPress={toggleTheme}
+      aria-label="Toggle theme"
+      isIconOnly
+      variant="light"
+      className="text-white"
+      size="sm"
+    >
+      {theme === "dark" ? (
+        <Sun className="text-yellow-400" />
+      ) : (
+        <Moon className="text-white" />
+      )}
+    </Button>
   );
 }

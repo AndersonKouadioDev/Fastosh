@@ -1,12 +1,27 @@
-"use client";
-
-import ThemeSwitcher from "@/components/common/ThemeSwitcher";
+import SiteInternationaux from "@/components/common/SiteInternationaux";
+import Faqs from "@/components/home/Faqs";
+import CtaCard from "@/components/common/CtaCard";
+import bg_3 from "@/public/images/background/bg_3.jpg";
+import NavigationCta from "@/components/common/NavigationCta";
+import FlightSearch from "@/components/vols/flight-search";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <ThemeSwitcher />
-      <p className="font-ibrand text-9xl text-gray">Hello World</p>
-    </div>
+    <main>
+      <FlightSearch />
+      <div className="flex min-h-screen p-6 lg:py-8 max-w-screen-xl mx-auto flex-col gap-8">
+        <NavigationCta />
+        <CtaCard
+          image={bg_3}
+          subtitle="Vous ne savez pas où partir ?"
+          title={<>Découvrez toutes les destinations</>}
+          // description={
+          //   "Trouvez et comparez les meilleures offres de location de voitures et de camionnettes partout dans le monde, où que vous soyez, en quelques secondes."
+          // }
+        />
+        <Faqs />
+        <SiteInternationaux />
+      </div>
+    </main>
   );
 }
