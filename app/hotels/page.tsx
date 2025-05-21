@@ -4,6 +4,8 @@ import ContentSection from "@/components/hotels/ContentSectionHotel";
 import Concurrents from "@/components/hotels/Concurrents";
 import QuickInfoSection from "@/components/hotels/QuickInfoSection";
 import StepsSection from "@/components/hotels/StepsSection";
+import ServiceNavigation from "@/components/common/ServiceNavigation";
+import { Car, Plane } from "lucide-react";
 
 export default function Hotel() {
   return (
@@ -15,6 +17,21 @@ export default function Hotel() {
         <QuickInfoSection />
         <StepsSection />
         <Faqs />
+        <ServiceNavigation
+          title="Vous prévoyez de voyager ?"
+          items={[
+            {
+              icon: <Plane className="h-4 w-4 mr-2" />,
+              label: "Vols",
+              href: "/vols",
+            },
+            {
+              icon: <Car className="h-4 w-4 mr-2" />,
+              label: "Location de voiture",
+              href: "/location-de-voiture",
+            },
+          ]}
+        />
       </div>
     </main>
   );

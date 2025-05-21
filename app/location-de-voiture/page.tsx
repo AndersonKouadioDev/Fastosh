@@ -8,7 +8,8 @@ import QuickInfoSection from "@/components/location-de-voiture/QuickInfoSection"
 import StepsSection from "@/components/location-de-voiture/StepsSection";
 import TipsSection from "@/components/location-de-voiture/TipsSection";
 import ServiceNavigation from "@/components/common/ServiceNavigation";
-import { Building2, Car, Plane } from "lucide-react";
+import { Building2, Plane } from "lucide-react";
+import TripPlannerSection from "@/components/location-de-voiture/TripPlannerSection";
 
 export default function LocationDeVoiture() {
   return (
@@ -29,6 +30,7 @@ export default function LocationDeVoiture() {
           buttonText="Télécharger l'appli"
         />
         <Faqs />
+        <TripPlannerSection />
         <ServiceNavigation
           title="Vous prévoyez de voyager ?"
           items={[
@@ -41,12 +43,7 @@ export default function LocationDeVoiture() {
               icon: <Building2 className="h-4 w-4 mr-2" />,
               label: "Hôtels",
               href: "/hotels",
-            },
-            {
-              icon: <Car className="h-4 w-4 mr-2" />,
-              label: "Location de voiture",
-              href: "/location-de-voiture",
-            },
+            }
           ]}
         />
       </div>
