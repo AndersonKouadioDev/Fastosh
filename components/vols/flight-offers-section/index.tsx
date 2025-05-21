@@ -1,5 +1,7 @@
+"use client";
 import FlightDestinationCard from "@/components/vols/flight-offers-section/flight-destination-card";
 import { destinations } from "@/lib/data";
+import { Button } from "@heroui/react";
 import { ChevronUp } from "lucide-react";
 
 export default function FlightOffersSection() {
@@ -25,10 +27,13 @@ export default function FlightOffersSection() {
       </div>
 
       <div className="mt-8 flex justify-center">
-        <button className="flex items-center text-blue-600 hover:text-blue-800">
+        <Button
+          variant="light"
+          color="primary"
+          endContent={<ChevronUp className="ml-1 h-4 w-4" />}
+        >
           Voir moins d&apos;offres
-          <ChevronUp className="ml-1 h-4 w-4" />
-        </button>
+        </Button>
       </div>
     </section>
   );
