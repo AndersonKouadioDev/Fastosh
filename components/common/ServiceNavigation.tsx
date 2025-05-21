@@ -17,7 +17,7 @@ export default function ServiceNavigation({
 }: ServiceNavigationProps) {
   return (
     <div className="flex flex-col gap-4 max-w-4xl">
-      <h2 className="text-3xl md:text-4xl font-bold font-ibrand">{title}</h2>
+      <h2 className="text-2xl md:text-3xl font-bold font-ibrand">{title}</h2>
       <div>
         {items.map((item, index) => (
           <div key={index} className="border-b border-foreground/20">
