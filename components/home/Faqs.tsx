@@ -8,7 +8,7 @@ import React from "react";
 export default function Faqs() {
   return (
     <div>
-      <h2 className="lg:text-4xl text-2xl font-bold font-ibrand text-secondary">
+      <h2 className="text-3xl md:text-4xl font-bold font-ibrand text-secondary">
         Réservez des vols avec <span className="text-primary">Fastosh</span>
       </h2>
       <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">

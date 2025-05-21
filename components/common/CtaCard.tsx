@@ -20,7 +20,7 @@ export default function CtaCard({
   return (
     <div
       onClick={() => {}}
-      className="relative mt-4 min-h-[450px] md:h-[360px] lg:h-[460px] w-full overflow-hidden rounded-2xl mx-auto container px-4 cursor-pointer"
+      className="relative min-h-[450px] md:h-[360px] lg:h-[460px] w-full overflow-hidden rounded-2xl mx-auto container px-4 cursor-pointer"
     >
       <Image
         src={image}
