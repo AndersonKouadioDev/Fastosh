@@ -1,4 +1,4 @@
-import { Calendar, Clock } from "lucide-react";
+import { Ticket } from "lucide-react";
 import { JSX } from "react";
 
 export interface Tip {
@@ -15,14 +15,14 @@ export default function TipsSection() {
       title: "Trouvez des offres de vols flexibles",
       description:
         "Explorez les offres de billets d'avion flexibles pour ne rien perdre si votre vol est modifié ou annulé",
-      icon: <Calendar />,
+      icon: <Ticket />,
     },
     {
       id: 2,
       title: "Ajoutez des hôtels et une location de voiture",
       description:
         "Planifiez votre trajet en incluant des hôtels et une location de voiture. Gardez toutes vos réservations en un seul et même endroit",
-      icon: <Clock />,
+      icon: <Ticket />,
     },
   ];
 
