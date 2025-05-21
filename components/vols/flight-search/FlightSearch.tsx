@@ -1,6 +1,5 @@
 "use client";
 
-import { ArrowLeftRight } from "lucide-react";
 import DateCalendar from "./date-calendar"; // Import DateCalendar
 import TravelersDropdown from "./travelers-dropdown"; // Import TravelersDropdown
 import LocationDropdown from "./location-dropdown"; // Import LocationDropdown
@@ -10,6 +9,8 @@ import DateSelector from "./date-selector";
 import TravelersSelector from "./travelers-selector";
 import SearchOptions from "./search-options";
 import useControl from "./useControl";
+import Image from "next/image";
+import bg_6 from "@/public/images/background/bg_6.jpg";
 import { Button } from "@heroui/react";
 
 export type Person = {
@@ -61,20 +62,17 @@ export default function FlightSearch() {
   } = useControl();
 
   return (
-    <div className="bg-primary-900 text-white">
-      <div className="container max-w-screen-xl px-6 mx-auto">
-        <h1 className="text-2xl md:text-4xl font-bold mb-8">
-          Des millions de vols pas chers. Une simple recherche.
-        </h1>
-
-        <div className="mb-6 flex items-center gap-2">
-          <ArrowLeftRight className="h-5 w-5" />
-          <span className="font-medium">
-            Créer un itinéraire multi-destinations
-          </span>
-        </div>
-
-        <div className="relative h-full p-6 rounded-2xl">
+    <div className="bg-primary-900 w-full h-[500px] z-[1] text-white relative">
+      <Image
+        src={bg_6}
+        alt="Vue panoramique sur l'océan au coucher du soleil"
+        fill
+        className="object-cover rounded-2xl absolute top-0 left-0 w-full h-full"
+        priority
+      />
+      <div className="absolute z-[1] top-0 left-0 w-full h-full bg-black opacity-20 rounded-2xl"></div>
+      <div className="relative z-[2] h-full container content-center max-w-screen-xl px-6 mx-auto">
+        <div className="relative bg-primary-900 p-6 rounded-2xl">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-2 mb-4">
             {/* From Location */}
             <LocationSelector

@@ -15,7 +15,7 @@ export default function LocationDeVoiture() {
   return (
     <main>
       <LocationDeVoitureSearch />
-      <div className="flex min-h-screen p-6 lg:py-8 max-w-screen-xl mx-auto flex-col mt-4 gap-16 md:gap-24">
+      <div className="flex min-h-screen px-6 py-8 lg:pb-16 lg:pt-8 max-w-screen-xl mx-auto flex-col gap-16 md:gap-24">
         <ContentSection />
         <EntrepriseCar />
         <QuickInfoSection />
@@ -43,7 +43,7 @@ export default function LocationDeVoiture() {
               icon: <Building2 className="h-4 w-4 mr-2" />,
               label: "Hôtels",
               href: "/hotels",
-            }
+            },
           ]}
         />
       </div>

@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <main>
       <FlightSearch />
-      <div className="flex min-h-screen p-6 lg:py-8 max-w-screen-xl mx-auto flex-col mt-8 gap-8 md:gap-8">
+      <div className="flex min-h-screen px-6 py-8 lg:pb-16 lg:pt-8 max-w-screen-xl mx-auto flex-col gap-16 md:gap-24">
         <NavigationCta />
         <CtaCard
           image={bg_3}

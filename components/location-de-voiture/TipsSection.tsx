@@ -56,22 +56,25 @@ export default function TipsSection() {
 
   return (
     <section className="flex flex-col gap-8">
-      <h2 className="text-3xl md:text-4xl font-bold font-ibrand">
-        Comment trouver la meilleure offre de location de voiture
-      </h2>
-      <p className="max-w-6xl">
-        Notre site de recherche de voyage est fréquemment désigné comme le plus
-        fiable qui soit. L&apos;utilisation de notre site est gratuite et nous
-        travaillerons dur pour chercher parmi des centaines d&apos;entreprises
-        de location de voiture afin que vous puissiez comparer les prix
-        instantanément et réserver. Voici comment tirer le meilleur parti de
-        votre recherche de location de véhicule.
-      </p>
+      <div className="flex flex-col gap-2">
+        <h2 className="text-3xl md:text-4xl font-bold font-ibrand">
+          Comment trouver la meilleure offre de location de voiture
+        </h2>
+        <p className="max-w-6xl">
+          Notre site de recherche de voyage est fréquemment désigné comme le
+          plus fiable qui soit. L&apos;utilisation de notre site est gratuite et
+          nous travaillerons dur pour chercher parmi des centaines
+          d&apos;entreprises de location de voiture afin que vous puissiez
+          comparer les prix instantanément et réserver. Voici comment tirer le
+          meilleur parti de votre recherche de location de véhicule.
+        </p>
+      </div>
+
       <div className="grid md:grid-cols-2 gap-6">
         {tips.map((tip) => (
           <div
             key={tip.id}
-            className="border border-foreground/50 rounded-lg p-6 hover:shadow-md transition-shadow"
+            className="rounded-2xl p-6 hover:shadow-xl transition-shadow"
           >
             <div className="flex items-start mb-4">
               <div className="mr-4 text-foreground">{tip.icon}</div>
