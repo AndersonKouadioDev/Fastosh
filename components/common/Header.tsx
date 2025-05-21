@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -150,9 +150,14 @@ export default function Header() {
     );
   }
 
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathName]);
+
   return (
     <div className="bg-primary-900 text-white sm:py-4 lg:p-8">
       <Navbar
+        isMenuOpen={isMenuOpen}
         onMenuOpenChange={setIsMenuOpen}
         maxWidth="xl"
         position="static"
