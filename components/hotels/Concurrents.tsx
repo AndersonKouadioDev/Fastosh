@@ -16,7 +16,7 @@ export default function ContentSection() {
       <h2 className="text-3xl md:text-4xl font-bold font-ibrand text-secondary">
         Comparez les hôtels de vos enseignes préférées{" "}
       </h2>
-      <div className="grid grid-cols-4 md:grid-cols-6 items-center gap-4">
+      <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 items-center gap-4">
         {conccurents.map((item, index) => (
           <Image
             key={index}
@@ -24,7 +24,7 @@ export default function ContentSection() {
             alt=""
             width={220}
             height={80}
-            className="w-full h-auto"
+            className="w-full h-auto shadow-lg"
           />
         ))}
       </div>

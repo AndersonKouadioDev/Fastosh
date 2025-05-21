@@ -1,7 +1,7 @@
 "use client";
 
 import { BedDouble, Search, Sticker } from "lucide-react";
-import ContentSection from "@/components/common/ContentPart";
+import ContentPart from "@/components/common/ContentPart";
 
 const items = [
   {
@@ -23,12 +23,14 @@ const items = [
 
 export default function ContentSectionHotel() {
   return (
-    <ContentSection
-      items={items}
-      itemsBreadcrumb={[
-        { href: "/", label: "Accueil" },
-        { href: "/hotels", label: "Hôtels" },
-      ]}
-    />
+    <section className="flex flex-col gap-8 md:gap-16">
+      <ContentPart
+        items={items}
+        itemsBreadcrumb={[
+          { href: "/", label: "Accueil" },
+          { href: "/hotels", label: "Hôtels" },
+        ]}
+      />
+    </section>
   );
 }
