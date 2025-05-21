@@ -62,7 +62,7 @@ export default function FlightSearch() {
   } = useControl();
 
   return (
-    <div className="bg-primary-900 w-full h-[500px] z-[1] text-white relative">
+    <div className="bg-primary-900 w-full py-4 min-h-[500px] z-[1] text-white relative">
       <Image
         src={bg_6}
         alt="Vue panoramique sur l'océan au coucher du soleil"

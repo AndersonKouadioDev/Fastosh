@@ -43,14 +43,14 @@ export default function LocationSelector({
     >
       {showSwapButton && (
         <div
-          className="absolute top-1/2 -left-4 transform -translate-y-1/2 bg-white rounded-full p-2 border border-gray-200 z-10 cursor-pointer"
+          className="absolute left-1/2 -top-6 md:top-1/2 md:-left-1 transform -translate-x-1/2 md:-translate-y-1/2 bg-white rounded-full p-2 border border-gray-200 z-10 cursor-pointer"
           onClick={(e) => {
             e.stopPropagation()
             onSwap?.()
           }}
         >
           <ArrowLeftRight
-            className="h-4 w-4 text-gray-500 transition-transform duration-300"
+            className="h-6 w-6 text-gray-500 transition-transform duration-300"
             style={{ transform: `rotate(${rotationDegree}deg)` }}
           />
         </div>
