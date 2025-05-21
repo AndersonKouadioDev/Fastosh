@@ -9,7 +9,7 @@ const items = [
     value: "destinations",
   },
   {
-    label: "Location de voiture à l&apos;aéroport",
+    label: "Location de voiture à l'aéroport",
     value: "airport",
   },
   {
@@ -29,11 +29,14 @@ export default function TripPlannerTabs() {
         {items.map((item) => (
           <button
             key={item.value}
-            className={cn("px-4 py-3 rounded-md text-sm font-medium shrink-0", {
-              "bg-gray-900 text-white": activeTab === item.value,
-              "bg-white border border-gray-300 text-gray-700 hover:bg-gray-50":
-                activeTab !== item.value,
-            })}
+            className={cn(
+              "px-4 py-1 w-54 sm:w-fit cursor-pointer rounded-md text-sm font-medium shrink-0",
+              {
+                "bg-blue-900 text-white": activeTab === item.value,
+                "bg-transparent border border-blue-900 dark:border-gray-500 hover:bg-foreground/10":
+                  activeTab !== item.value,
+              }
+            )}
             onClick={() => setActiveTab(item.value)}
           >
             {item.label}
