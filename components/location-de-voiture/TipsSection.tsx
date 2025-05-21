@@ -70,7 +70,7 @@ export default function TipsSection() {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid md:grid-cols-2 gap-4 mg:gap-6">
         {tips.map((tip) => (
           <div
             key={tip.id}
