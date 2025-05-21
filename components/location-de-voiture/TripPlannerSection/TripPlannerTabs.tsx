@@ -21,11 +21,11 @@ export default function TripPlannerTabs() {
   const [activeTab, setActiveTab] = useState("destinations");
 
   return (
-    <div className="flex flex-col gap-4 py-4">
+    <div className="flex flex-col gap-4">
       <h2 className="text-2xl md:text-3xl font-bold font-ibrand">
         Commencez à planifier votre road trip
       </h2>
-      <div className="flex gap-3 overflow-x-auto">
+      <div className="flex gap-3 overflow-x-auto py-4">
         {items.map((item) => (
           <button
             key={item.value}
