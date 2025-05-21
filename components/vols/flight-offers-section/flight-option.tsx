@@ -15,21 +15,21 @@ export default function FlightOption({ flightOption }: FlightOptionProps) {
               <span className="text-xs">K</span>
             </span>
           ) : (
-            <Plane className="h-5 w-5 text-gray-700" />
+            <Plane className="h-5 w-5 text-foreground/70" />
           )}
         </div>
         <div>
-          <p className="text-sm font-medium text-gray-900">
+          <p className="text-sm font-medium">
             {flightOption.dayOfWeek}. {flightOption.date}
           </p>
-          <p className="text-xs text-gray-600">
+          <p className="text-xs text-foreground/70">
             {flightOption.departureAirport} - {flightOption.arrivalAirport} avec{" "}
             {flightOption.airline}
           </p>
         </div>
       </div>
       <div>
-        <span className="text-xs font-medium text-gray-700">Direct</span>
+        <span className="text-xs font-medium text-foreground/70">Direct</span>
       </div>
     </div>
   );
