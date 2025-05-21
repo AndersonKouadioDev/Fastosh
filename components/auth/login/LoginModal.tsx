@@ -43,7 +43,7 @@ export default function LoginModal({ isOpen, onOpenChange }: LoginModalProps) {
   };
 
   return (
-    <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+    <Modal placement="center" isOpen={isOpen} onOpenChange={onOpenChange}>
       <ModalContent>
         {(onClose) => (
           <>

@@ -27,14 +27,14 @@ export default function SuccessStep({ onClose }: SuccessStepProps) {
       <div className="space-y-3">
         <Button
           type="submit"
-          className="w-full"
+          fullWidth
           size="lg"
           color="primary"
           onPress={onClose}
         >
           Oui, volontiers
         </Button>
-        <Button type="submit" className="w-full" size="lg" onPress={onClose}>
+        <Button type="submit" fullWidth size="lg" onPress={onClose}>
           Peut-être plus tard
         </Button>
       </div>

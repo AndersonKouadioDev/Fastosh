@@ -40,16 +40,12 @@ export default function VerificationStep({
         <div className="mb-6 text-sm">
           <p>
             Vous n&apos;avez pas reçu le code ?{" "}
-            <Button
-              variant="light"
-              className="hover:underline"
-              color="primary"
-            >
+            <Button variant="light" className="hover:underline" color="primary">
               Renvoyer le code
             </Button>
           </p>
         </div>
-        <Button type="submit" className="w-full" size="lg" color="primary">
+        <Button type="submit" fullWidth size="lg" color="primary">
           Vérification du code
         </Button>
       </div>

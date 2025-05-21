@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Logo from "@/components/common/Logo";
+import { Button } from "@heroui/react";
 
 interface InitialStepProps {
   onContinueWithEmail: () => void;
@@ -24,10 +25,10 @@ export default function InitialStep({
 
       {/* Titre et description */}
       <div className="mb-6 text-center">
-        <h2 className="mb-4 text-2xl font-bold text-gray-900">
+        <h2 className="mb-4 text-2xl font-bold">
           Bénéficiez de la meilleure expérience
         </h2>
-        <p className="text-gray-700">
+        <p className="text-foreground/70">
           Suivez les prix, facilitez la planification de votre voyage et
           réservez plus rapidement.
         </p>
@@ -35,14 +36,15 @@ export default function InitialStep({
 
       {/* Options de connexion */}
       <div className="space-y-3">
-        <button
-          className="flex w-full items-center justify-center rounded-md bg-gray-200 px-4 py-3 font-medium text-gray-800 hover:bg-gray-300"
-          onClick={onContinueWithEmail}
-        >
+        <Button size="lg" onPress={onContinueWithEmail} fullWidth>
           Continuer avec mon adresse e-mail
-        </button>
-
-        <button className="flex w-full items-center justify-center rounded-md bg-gray-200 px-4 py-3 font-medium text-gray-800 hover:bg-gray-300">
+        </Button>
+        <Button
+          size="lg"
+          onPress={onContinueWithEmail}
+          fullWidth
+          className="flex items-center"
+        >
           <Image
             src="/images/sociaux/facebook.png"
             alt="Facebook"
@@ -51,9 +53,13 @@ export default function InitialStep({
             className="mr-2"
           />
           Facebook
-        </button>
-
-        <button className="flex w-full items-center justify-center rounded-md bg-gray-200 px-4 py-3 font-medium text-gray-800 hover:bg-gray-300">
+        </Button>
+        <Button
+          size="lg"
+          onPress={onContinueWithEmail}
+          fullWidth
+          className="flex items-center"
+        >
           <Image
             src="/images/sociaux/google.png"
             alt="Google"
@@ -62,9 +68,14 @@ export default function InitialStep({
             className="mr-2"
           />
           Google
-        </button>
+        </Button>
 
-        <button className="flex w-full items-center justify-center rounded-md bg-gray-200 px-4 py-3 font-medium text-gray-800 hover:bg-gray-300">
+        <Button
+          size="lg"
+          onPress={onContinueWithEmail}
+          fullWidth
+          className="flex items-center"
+        >
           <Image
             src="/images/sociaux/apple.png"
             alt="Apple"
@@ -73,7 +84,7 @@ export default function InitialStep({
             className="mr-2"
           />
           Apple
-        </button>
+        </Button>
       </div>
 
       {/* Se souvenir de moi */}
@@ -83,24 +94,24 @@ export default function InitialStep({
           id="remember-me"
           checked={rememberMe}
           onChange={() => onRememberMeChange(!rememberMe)}
-          className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+          className="h-4 w-4 rounded border-foreground/30 text-primary focus:ring-primary-600"
         />
         <label
           htmlFor="remember-me"
-          className="ml-2 block text-sm text-gray-700"
+          className="ml-2 block text-sm text-foreground/70"
         >
           Se souvenir de moi
         </label>
       </div>
 
-      <div className="mt-6 text-sm text-gray-600">
+      <div className="mt-6 text-sm text-foreground/70">
         <p>
           En continuant, vous acceptez nos{" "}
-          <a href="#" className="text-blue-600 hover:underline">
+          <a href="#" className="text-primary hover:underline">
             Conditions d&apos;utilisation
           </a>{" "}
           et notre{" "}
-          <a href="#" className="text-blue-600 hover:underline">
+          <a href="#" className="text-primary hover:underline">
             Politique de confidentialité
           </a>
           .
