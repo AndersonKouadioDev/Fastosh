@@ -5,6 +5,7 @@ import Concurrents from "@/components/hotels/Concurrents";
 import QuickInfoSection from "@/components/hotels/QuickInfoSection";
 import StepsSection from "@/components/hotels/StepsSection";
 import ServiceNavigation from "@/components/common/ServiceNavigation";
+import HotelPlannerSection from "@/components/hotels/HotelPlannerSection";
 import { Car, Plane } from "lucide-react";
 
 export default function Hotel() {
@@ -17,6 +18,7 @@ export default function Hotel() {
         <QuickInfoSection />
         <StepsSection />
         <Faqs />
+        <HotelPlannerSection />
         <ServiceNavigation
           title="Vous prévoyez de voyager ?"
           items={[

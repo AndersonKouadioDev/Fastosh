@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export interface Destination {
   id: number;
   city: string;
@@ -27,13 +29,13 @@ export default function TripPlannerContent() {
     <div className="relative">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-4">
         {destinations.map((destination) => (
-          <a
+          <Link
             key={destination.id}
             href={`/location/${destination.city.toLowerCase()}`}
             className="hover:underline"
           >
             {destination.city} : {destination.description}
-          </a>
+          </Link>
         ))}
       </div>
     </div>

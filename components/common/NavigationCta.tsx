@@ -22,7 +22,7 @@ const items = [
 ];
 export default function NavigationCta() {
   return (
-    <div className="grid grid-flow-col sm:grid-cols-3 gap-x-4 overflow-x-auto">
+    <div className="grid grid-flow-col sm:grid-cols-3 gap-x-4 overflow-x-auto py-4">
       {items.map((item, index) => (
         <div
           key={index}
