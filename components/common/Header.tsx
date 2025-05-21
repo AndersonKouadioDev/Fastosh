@@ -17,6 +17,7 @@ import {
   DropdownItem,
   cn,
   DropdownSection,
+  useDisclosure,
 } from "@heroui/react";
 
 import { usePathname } from "next/navigation";
@@ -37,6 +38,7 @@ import LinkNext from "next/link";
 import ThemeSwitcher from "./ThemeSwitcher";
 import Logo from "./Logo";
 import TravelNav from "./TravelNav";
+import LoginModal from "@/components/auth/login/LoginModal";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -83,6 +85,7 @@ export default function Header() {
       { name: "Aide", path: "/aide", icone: HelpCircle },
     ],
   };
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   function HeaderMenu({ className }: { className?: string }) {
     return (
@@ -213,12 +216,16 @@ export default function Header() {
           </NavbarItem>
 
           <NavbarItem>
-            <UserCircle className="size-6 sm:size-8 sm:hidden" />
+            <UserCircle
+              onClick={onOpen}
+              className="size-6 sm:size-8 sm:hidden"
+            />
             <Button
               variant="light"
               className="text-white hidden sm:flex"
               size="sm"
               startContent={<UserCircle size={20} />}
+              onPress={onOpen}
             >
               Se connecter
             </Button>
@@ -321,6 +328,7 @@ export default function Header() {
         </NavbarMenu>
       </Navbar>
       <TravelNav />
+      <LoginModal isOpen={isOpen} onOpen={onOpen} onOpenChange={onOpenChange} />
     </div>
   );
 }
