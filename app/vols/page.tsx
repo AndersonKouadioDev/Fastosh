@@ -4,6 +4,7 @@ import ContentSection from "@/components/vols/ContentSection";
 import StepsSection from "@/components/vols/StepsSection";
 import TipsSection from "@/components/vols/TipsSection";
 import ServiceNavigation from "@/components/common/ServiceNavigation";
+import FlightOffersSection from "@/components/vols/flight-offers-section";
 import { Car, Building2 } from "lucide-react";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       <FlightSearch />
       <div className="flex min-h-screen px-6 py-8 lg:pb-16 lg:pt-8 max-w-screen-xl mx-auto flex-col gap-16 md:gap-24">
         <ContentSection />
+        <FlightOffersSection />
         <Faqs />
         <StepsSection />
         <TipsSection />

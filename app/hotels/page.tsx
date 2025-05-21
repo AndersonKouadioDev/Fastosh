@@ -5,7 +5,7 @@ import Concurrents from "@/components/hotels/Concurrents";
 import QuickInfoSection from "@/components/hotels/QuickInfoSection";
 import StepsSection from "@/components/hotels/StepsSection";
 import ServiceNavigation from "@/components/common/ServiceNavigation";
-import HotelPlannerSection from "@/components/hotels/HotelPlannerSection";
+import HotelPlannerSection from "@/components/hotels/hotel-planner-section";
 import { Car, Plane } from "lucide-react";
 
 export default function Hotel() {

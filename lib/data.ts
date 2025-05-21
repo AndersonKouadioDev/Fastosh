@@ -1,9 +1,6 @@
+import { FaqAccordionItem, SiteInternationaux } from "@/types/index.type";
+import { Destination } from "@/types/vols.type";
 
-export interface FaqAccordionItem {
-    id: number;
-    title: string;
-    content: string;
-}
 
 export const faqs: FaqAccordionItem[] = [
     {
@@ -61,17 +58,6 @@ export const faqs: FaqAccordionItem[] = [
         content: "Oui. Depuis que nous avons commencé à afficher les émissions de CO₂ des vols (quand cette information est disponible), plus de 100 millions de voyageurs ont trouvé un billet d'avion émettant moins de CO₂ pour leur trajet.",
     }
 ];
-
-
-export interface SiteInternationaux {
-    country: string;
-    code: string;
-    url: string;
-    locale: string;
-    market: string;
-    labelText: string;
-    image_url: string;
-}
 
 export const siteInternationaux: SiteInternationaux[] = [
     {
@@ -274,3 +260,306 @@ export const siteInternationaux: SiteInternationaux[] = [
         image_url: "https://js.skyscnr.com/images/country/flag/header/us.png",
     }
 ];
+
+export const destinations: Destination[] = [
+    {
+        id: 1,
+        city: "San-Pédro",
+        country: "Côte d'Ivoire",
+        imageUrl: "/images/background/bg_1.jpg",
+        flightOptions: [
+            {
+                dayOfWeek: "mer",
+                date: "28 mai",
+                departureAirport: "ABJ",
+                arrivalAirport: "SPY",
+                airline: "Air Côte d'Ivoire",
+                isDirect: true,
+            },
+            {
+                dayOfWeek: "jeu",
+                date: "6 juin",
+                departureAirport: "SPY",
+                arrivalAirport: "ABJ",
+                airline: "Air Côte d'Ivoire",
+                isDirect: true,
+            },
+        ],
+        startingPrice: "64.277F",
+    },
+    {
+        id: 2,
+        city: "Bamako",
+        country: "Mali",
+        imageUrl: "/images/background/bg_2.jpg",
+        flightOptions: [
+            {
+                dayOfWeek: "jeu",
+                date: "3 juil.",
+                departureAirport: "ABJ",
+                arrivalAirport: "BKO",
+                airline: "Mauritania Airlines",
+                isDirect: true,
+            },
+            {
+                dayOfWeek: "jeu",
+                date: "10 juil.",
+                departureAirport: "BKO",
+                arrivalAirport: "ABJ",
+                airline: "Mauritania Airlines",
+                isDirect: true,
+            },
+        ],
+        startingPrice: "177.756F",
+    },
+    {
+        id: 3,
+        city: "Lomé",
+        country: "Togo",
+        imageUrl: "/images/background/bg_3.jpg",
+        flightOptions: [
+            {
+                dayOfWeek: "mer",
+                date: "11 juin",
+                departureAirport: "ABJ",
+                arrivalAirport: "LFW",
+                airline: "Air Côte d'Ivoire",
+                isDirect: true,
+            },
+            {
+                dayOfWeek: "mar",
+                date: "17 juin",
+                departureAirport: "LFW",
+                arrivalAirport: "ABJ",
+                airline: "Air Côte d'Ivoire",
+                isDirect: true,
+            },
+        ],
+        startingPrice: "210.556F",
+    },
+    {
+        id: 4,
+        city: "Accra",
+        country: "Ghana",
+        imageUrl: "/images/background/bg_4.jpg",
+        flightOptions: [
+            {
+                dayOfWeek: "ven",
+                date: "19 juil.",
+                departureAirport: "ABJ",
+                arrivalAirport: "ACC",
+                airline: "Air Côte d'Ivoire",
+                isDirect: true,
+            },
+            {
+                dayOfWeek: "sam",
+                date: "26 juil.",
+                departureAirport: "ACC",
+                arrivalAirport: "ABJ",
+                airline: "Air Côte d'Ivoire",
+                isDirect: true,
+            },
+        ],
+        startingPrice: "231.546F",
+    },
+    {
+        id: 5,
+        city: "Dakar",
+        country: "Sénégal",
+        imageUrl: "/images/background/bg_5.jpg",
+        flightOptions: [
+            {
+                dayOfWeek: "sam",
+                date: "5 juil.",
+                departureAirport: "ABJ",
+                arrivalAirport: "DSS",
+                airline: "Mauritania Airlines",
+                isDirect: true,
+            },
+            {
+                dayOfWeek: "lun",
+                date: "21 juil.",
+                departureAirport: "DSS",
+                arrivalAirport: "ABJ",
+                airline: "Mauritania Airlines",
+                isDirect: true,
+            },
+        ],
+        startingPrice: "237.460F",
+    },
+    {
+        id: 6,
+        city: "Alger",
+        country: "Algérie",
+        imageUrl: "/images/background/bg_6.jpg",
+        flightOptions: [
+            {
+                dayOfWeek: "jeu",
+                date: "31 juil.",
+                departureAirport: "ABJ",
+                arrivalAirport: "ALG",
+                airline: "Air Algérie",
+                isDirect: true,
+            },
+            {
+                dayOfWeek: "ven",
+                date: "8 août",
+                departureAirport: "ALG",
+                arrivalAirport: "ABJ",
+                airline: "Air Algérie",
+                isDirect: true,
+            },
+        ],
+        startingPrice: "252.537F",
+    },
+    {
+        id: 7,
+        city: "Conakry",
+        country: "Guinée",
+        imageUrl: "/images/background/bg_1.jpg",
+        flightOptions: [
+            {
+                dayOfWeek: "jeu",
+                date: "22 mai",
+                departureAirport: "ABJ",
+                arrivalAirport: "CKY",
+                airline: "Air Sénégal",
+                isDirect: true,
+            },
+            {
+                dayOfWeek: "jeu",
+                date: "29 mai",
+                departureAirport: "CKY",
+                arrivalAirport: "ABJ",
+                airline: "Air Sénégal",
+                isDirect: true,
+            },
+        ],
+        startingPrice: "261.064F",
+    },
+    {
+        id: 8,
+        city: "Bobo-Dioulasso",
+        country: "Burkina Faso",
+        imageUrl: "/images/background/bg_2.jpg",
+        flightOptions: [
+            {
+                dayOfWeek: "ven",
+                date: "23 mai",
+                departureAirport: "ABJ",
+                arrivalAirport: "BOY",
+                airline: "Air Burkina",
+                isDirect: true,
+            },
+            {
+                dayOfWeek: "ven",
+                date: "30 mai",
+                departureAirport: "BOY",
+                arrivalAirport: "ABJ",
+                airline: "Air Burkina",
+                isDirect: true,
+            },
+        ],
+        startingPrice: "271.684F",
+    },
+    {
+        id: 9,
+        city: "Cotonou",
+        country: "Bénin",
+        imageUrl: "/images/background/bg_3.jpg",
+        flightOptions: [
+            {
+                dayOfWeek: "ven",
+                date: "6 juin",
+                departureAirport: "ABJ",
+                arrivalAirport: "COO",
+                airline: "Air Côte d'Ivoire",
+                isDirect: true,
+            },
+            {
+                dayOfWeek: "mar",
+                date: "10 juin",
+                departureAirport: "COO",
+                arrivalAirport: "ABJ",
+                airline: "Air Côte d'Ivoire",
+                isDirect: true,
+            },
+        ],
+        startingPrice: "272.216F",
+    },
+    {
+        id: 10,
+        city: "Casablanca",
+        country: "Maroc",
+        imageUrl: "/images/background/bg_4.jpg",
+        flightOptions: [
+            {
+                dayOfWeek: "lun",
+                date: "9 juin",
+                departureAirport: "ABJ",
+                arrivalAirport: "CMN",
+                airline: "Air Côte d'Ivoire",
+                isDirect: true,
+            },
+            {
+                dayOfWeek: "dim",
+                date: "15 juin",
+                departureAirport: "CMN",
+                arrivalAirport: "ABJ",
+                airline: "Air Côte d'Ivoire",
+                isDirect: true,
+            },
+        ],
+        startingPrice: "280.743F",
+    },
+    {
+        id: 11,
+        city: "Le Caire",
+        country: "Égypte",
+        imageUrl: "/images/background/bg_5.jpg",
+        flightOptions: [
+            {
+                dayOfWeek: "mer",
+                date: "30 juil.",
+                departureAirport: "ABJ",
+                arrivalAirport: "CAI",
+                airline: "EgyptAir",
+                isDirect: true,
+            },
+            {
+                dayOfWeek: "dim",
+                date: "31 août",
+                departureAirport: "CAI",
+                arrivalAirport: "ABJ",
+                airline: "EgyptAir",
+                isDirect: true,
+            },
+        ],
+        startingPrice: "367.671F",
+    },
+    {
+        id: 12,
+        city: "Douala",
+        country: "Cameroun",
+        imageUrl: "/images/background/bg_6.jpg",
+        flightOptions: [
+            {
+                dayOfWeek: "ven",
+                date: "20 juin",
+                departureAirport: "ABJ",
+                arrivalAirport: "DLA",
+                airline: "Kenya Airways",
+                isDirect: true,
+            },
+            {
+                dayOfWeek: "lun",
+                date: "23 juin",
+                departureAirport: "DLA",
+                arrivalAirport: "ABJ",
+                airline: "Kenya Airways",
+                isDirect: true,
+            },
+        ],
+        startingPrice: "388.976F",
+    },
+]

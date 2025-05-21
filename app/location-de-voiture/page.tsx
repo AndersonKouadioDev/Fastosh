@@ -9,7 +9,7 @@ import StepsSection from "@/components/location-de-voiture/StepsSection";
 import TipsSection from "@/components/location-de-voiture/TipsSection";
 import ServiceNavigation from "@/components/common/ServiceNavigation";
 import { Building2, Plane } from "lucide-react";
-import TripPlannerSection from "@/components/location-de-voiture/TripPlannerSection";
+import TripPlannerSection from "@/components/location-de-voiture/trip-planner-section";
 
 export default function LocationDeVoiture() {
   return (
