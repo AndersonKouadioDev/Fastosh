@@ -24,7 +24,7 @@ type StickyTabsProps = {
     render: (activeIndex: number) => ReactNode;
   };
   hideOnScroll?: boolean;
-  hideItemsInMobile?: boolean;
+  selectInMobile?: boolean;
   children?: ReactNode;
 };
 
@@ -47,7 +47,7 @@ export default function StickyTabs({
   sections,
   extras,
   hideOnScroll = false,
-  hideItemsInMobile = false,
+  selectInMobile = false,
   children,
 }: StickyTabsProps) {
   const [activeSection, setActiveSection] = useState<string>(sections[0].id);
@@ -132,7 +132,7 @@ export default function StickyTabs({
 
   // 🔁 Scroll horizontal automatique lors du scroll vertical
   useEffect(() => {
-    if (isMobile) return;
+    if (isMobile && selectInMobile) return;
 
     const tab = document.querySelector(`[data-key="${activeSection}"]`);
     if (tab && tabListRef.current) {
@@ -144,7 +144,7 @@ export default function StickyTabs({
         behavior: "smooth",
       });
     }
-  }, [activeSection, isMobile]);
+  }, [activeSection, isMobile, selectInMobile]);
 
   const activeIndex = sections.findIndex((s) => s.id === activeSection);
   const from = extras?.fromIndex ?? Infinity;
@@ -167,8 +167,15 @@ export default function StickyTabs({
           }`
         )}
       >
-        <div className="flex items-center justify-between px-2 md:px-4 py-2">
-          {isMobile && hideItemsInMobile ? (
+        <div
+          className={cn(
+            {
+              flex: showExtras,
+            },
+            "items-center justify-between px-2 md:px-4 py-2"
+          )}
+        >
+          {isMobile && selectInMobile ? (
             <Select
               selectedKeys={[activeSection]}
               onChange={(e) => onSelectionChange(e.target.value)}
@@ -181,7 +188,7 @@ export default function StickyTabs({
           ) : (
             <div
               ref={tabListRef}
-              className="overflow-x-auto scrollbar-hide flex-1"
+              className="overflow-x-auto w-full scrollbar-hide flex-1"
             >
               <Tabs
                 selectedKey={activeSection}
@@ -189,7 +196,7 @@ export default function StickyTabs({
                 variant="underlined"
                 size="lg"
                 classNames={{
-                  tabList: "gap-8 w-full p-0 border-b-2 border-border flex",
+                  tabList: "gap-8 w-full p-0 flex",
                   cursor: "w-full bg-primary h-0.5",
                   tab: "max-w-fit px-0 h-14 data-[hover=true]:opacity-80 transition-all",
                   tabContent:
@@ -206,7 +213,7 @@ export default function StickyTabs({
             </div>
           )}
 
-          {extras?.render && extras.render(activeIndex) && (
+          {showExtras && (
             <div
               className={`ml-2 md:ml-4 transition-all duration-500 ease-in-out ${
                 showExtras
@@ -214,7 +221,7 @@ export default function StickyTabs({
                   : "opacity-0 translate-x-4 pointer-events-none"
               }`}
             >
-              {extras.render(activeIndex)}
+              {extras.render && extras.render(activeIndex)}
             </div>
           )}
         </div>

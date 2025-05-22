@@ -26,7 +26,6 @@ export default function StickyNavigation() {
   return (
     <StickyTabs
       sections={navigationItems}
-      hideItemsInMobile
       extras={{
         fromIndex: 2,
         toIndex: -1,
