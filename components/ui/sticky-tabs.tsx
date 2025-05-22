@@ -24,6 +24,7 @@ type StickyTabsProps = {
     render: (activeIndex: number) => ReactNode;
   };
   hideOnScroll?: boolean;
+  hideItemsInMobile?: boolean;
   children?: ReactNode;
 };
 
@@ -46,6 +47,7 @@ export default function StickyTabs({
   sections,
   extras,
   hideOnScroll = false,
+  hideItemsInMobile = false,
   children,
 }: StickyTabsProps) {
   const [activeSection, setActiveSection] = useState<string>(sections[0].id);
@@ -166,7 +168,7 @@ export default function StickyTabs({
         )}
       >
         <div className="flex items-center justify-between px-2 md:px-4 py-2">
-          {isMobile ? (
+          {isMobile && hideItemsInMobile ? (
             <Select
               selectedKeys={[activeSection]}
               onChange={(e) => onSelectionChange(e.target.value)}
