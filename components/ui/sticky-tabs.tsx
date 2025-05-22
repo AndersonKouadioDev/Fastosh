@@ -155,7 +155,7 @@ export default function StickyTabs({
       <div
         ref={navRef}
         className={cn(
-          `sticky top-0 z-50 bg-background transition-all duration-500 ease-in-out
+          `sticky top-0 z-50 bg-background transition-all duration-500 ease-in-out overflow-hidden
           ${
             hideOnScroll
               ? scrollDir === "down"
@@ -169,7 +169,7 @@ export default function StickyTabs({
           {isMobile ? (
             <Select
               selectedKeys={[activeSection]}
-              onSelectionChange={(key) => onSelectionChange(key as string)}
+              onChange={(e) => onSelectionChange(e.target.value)}
               className="flex-1"
             >
               {sections.map((section) => (
@@ -204,7 +204,7 @@ export default function StickyTabs({
             </div>
           )}
 
-          {extras?.render && (
+          {extras?.render && extras.render(activeIndex) && (
             <div
               className={`ml-2 md:ml-4 transition-all duration-500 ease-in-out ${
                 showExtras
