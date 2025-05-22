@@ -3,6 +3,7 @@ import FlightDestinationCard from "@/components/vols/flight-offers-section/fligh
 import { destinations } from "@/lib/data";
 import { Button } from "@heroui/react";
 import { ChevronUp } from "lucide-react";
+import Link from "next/link";
 
 export default function FlightOffersSection() {
   return (
@@ -28,6 +29,8 @@ export default function FlightOffersSection() {
 
       <div className="mt-8 flex justify-center">
         <Button
+          as={Link}
+          href="#"
           variant="light"
           color="primary"
           endContent={<ChevronUp className="ml-1 h-4 w-4" />}

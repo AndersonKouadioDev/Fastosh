@@ -27,7 +27,7 @@ export default function FlightDestinationCard({
       </CardHeader>
       <CardBody>
         <div className="p-4">
-          <h3 className="text-lg font-bold">{destination.city}</h3>
+          <h3 className="text-lg md:text-xl font-bold">{destination.city}</h3>
           <p className="text-sm text-foreground/70">{destination.country}</p>
 
           <div className="mt-4 space-y-3">

@@ -1,4 +1,5 @@
 import { FaqAccordionItem, SiteInternationaux } from "@/types/index.type";
+import { CarRentalOption } from "@/types/location-voiture.type";
 import { Destination } from "@/types/vols.type";
 
 
@@ -562,4 +563,53 @@ export const destinations: Destination[] = [
         ],
         startingPrice: "388.976F",
     },
+]
+
+
+export const carRentalOptions: CarRentalOption[] = [
+    {
+        id: 1,
+        type: "Économique",
+        description: "4-5 portes",
+        imageUrl: "/images/background/car_1.png",
+        passengers: 4,
+        bags: 2,
+        price: "38,485F",
+    },
+    {
+        id: 2,
+        type: "Compacte",
+        description: "4-5 portes",
+        imageUrl: "/images/background/car_2.png",
+        passengers: 4,
+        bags: 3,
+        price: "61,772F",
+    },
+    {
+        id: 3,
+        type: "Intermédiaire",
+        description: "Crossover",
+        imageUrl: "/images/background/car_1.png",
+        passengers: 5,
+        bags: 4,
+        price: "74,970F",
+    },
+    {
+        id: 4,
+        type: "Familiale",
+        description: "SUV",
+        imageUrl: "/images/background/car_2.png",
+        passengers: 5,
+        bags: 4,
+        price: "104,599F",
+    },
+    {
+        id: 5,
+        type: "Premium",
+        description: "Crossover",
+        imageUrl: "/images/background/car_1.png",
+        passengers: 5,
+        bags: 2,
+        price: "179,693F",
+    }
 ]

@@ -10,6 +10,8 @@ import TipsSection from "@/components/location-de-voiture/TipsSection";
 import ServiceNavigation from "@/components/common/ServiceNavigation";
 import { Building2, Plane } from "lucide-react";
 import TripPlannerSection from "@/components/location-de-voiture/trip-planner-section";
+import DestinationLocationSection from "@/components/location-de-voiture/destination-location-section";
+import CarRentalSection from "@/components/location-de-voiture/car-rental-section";
 
 export default function LocationDeVoiture() {
   return (
@@ -17,6 +19,8 @@ export default function LocationDeVoiture() {
       <LocationDeVoitureSearch />
       <div className="flex min-h-screen px-6 py-8 lg:pb-16 lg:pt-8 max-w-screen-xl mx-auto flex-col gap-16 md:gap-24">
         <ContentSection />
+        <DestinationLocationSection />
+        <CarRentalSection />
         <EntrepriseCar />
         <QuickInfoSection />
         <StepsSection />

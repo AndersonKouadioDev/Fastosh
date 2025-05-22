@@ -7,6 +7,7 @@ import StepsSection from "@/components/hotels/StepsSection";
 import ServiceNavigation from "@/components/common/ServiceNavigation";
 import HotelPlannerSection from "@/components/hotels/hotel-planner-section";
 import { Car, Plane } from "lucide-react";
+import HotelOffersSection from "@/components/hotels/hotel-offers-section";
 
 export default function Hotel() {
   return (
@@ -15,6 +16,7 @@ export default function Hotel() {
       <div className="flex min-h-screen px-6 py-8 lg:pb-16 lg:pt-8 max-w-screen-xl mx-auto flex-col gap-16 md:gap-24">
         <ContentSection />
         <Concurrents />
+        <HotelOffersSection />
         <QuickInfoSection />
         <StepsSection />
         <Faqs />
