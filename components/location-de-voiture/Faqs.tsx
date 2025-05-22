@@ -7,7 +7,7 @@ import React from "react";
 
 export default function Faqs() {
   return (
-    <div>
+    <section id="faq">
       <h2 className="text-3xl md:text-4xl font-bold font-ibrand text-secondary">
         Trouver votre véhicule avec nous : FAQ
       </h2>
@@ -28,6 +28,6 @@ export default function Faqs() {
           ))}
         </Accordion>
       </div>
-    </div>
+    </section>
   );
 }

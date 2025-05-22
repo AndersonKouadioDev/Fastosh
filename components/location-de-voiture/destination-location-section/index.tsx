@@ -6,7 +6,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function DestinationLocationSection() {
   return (
-    <section className="flex flex-col gap-6">
+    <section className="flex flex-col gap-6" id="car-offers">
       <div className="flex justify-between items-center">
         <h2 className="lg:text-4xl text-2xl font-bold font-ibrand text-secondary">
           Destinations et locations de voiture populaires

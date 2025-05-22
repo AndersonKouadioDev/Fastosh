@@ -18,7 +18,7 @@ export default function CtaCard({
   buttonText?: string;
 }) {
   return (
-    <div
+    <section
       onClick={() => {}}
       className="relative min-h-[450px] md:h-[360px] lg:h-[460px] w-full overflow-hidden rounded-2xl mx-auto container px-4 cursor-pointer"
     >
@@ -54,6 +54,6 @@ export default function CtaCard({
           </div>
         )}
       </div>
-    </div>
+    </section>
   );
 }

@@ -55,7 +55,7 @@ export default function TipsSection() {
   ];
 
   return (
-    <section className="flex flex-col gap-8">
+    <section id="best-offer" className="flex flex-col gap-8">
       <div className="flex flex-col gap-2">
         <h2 className="text-3xl md:text-4xl font-bold font-ibrand">
           Comment trouver la meilleure offre de location de voiture

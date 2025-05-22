@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function CarRentalSection() {
   return (
-    <section>
+    <section id="providers">
       <div className="mb-6">
         <h2 className="lg:text-4xl text-2xl font-bold font-ibrand text-secondary">
           Trouvez les meilleures offres de location de voiture à : Abidjan
