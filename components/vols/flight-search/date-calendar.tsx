@@ -49,7 +49,7 @@ export default function DateCalendar({
   ]
 
   return (
-    <div className="absolute left-0 top-[calc(100%+4px)] w-full bg-white text-black rounded-md shadow-lg z-20">
+    <div className="absolute left-0 top-[calc(50%+38px)] md:top-[calc(50%-28px)] transform w-full bg-white text-black rounded-md shadow-lg z-20">
       <div className="p-4">
         <div className="flex justify-between items-center mb-4">
           <div>

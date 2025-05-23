@@ -2,7 +2,6 @@
 
 import DateCalendar from "./date-calendar"; // Import DateCalendar
 import TravelersDropdown from "./travelers-dropdown"; // Import TravelersDropdown
-import LocationDropdown from "./location-dropdown"; // Import LocationDropdown
 
 import LocationSelector from "./location-selector";
 import DateSelector from "./date-selector";
@@ -22,8 +21,6 @@ export type Person = {
 
 export default function FlightSearch() {
   const {
-    showFromOptions,
-    showToOptions,
     showCalendar,
     showTravelers,
     adults,
@@ -36,18 +33,12 @@ export default function FlightSearch() {
     // selectedReturnMonth,
     tripType,
     activeField,
-    rotationDegree,
     returnFieldVisible,
-    fromValue,
-    toValue,
+    locationData,
     setAdults,
     setChildren,
-    setShowFromOptions,
-    setShowToOptions,
     setShowCalendar,
     setShowTravelers,
-    handleInputClick,
-    closeAllDropdowns,
     handleSwapLocations,
     handleSelectLocation,
     handleSelectDate,
@@ -62,7 +53,7 @@ export default function FlightSearch() {
   } = useControl();
 
   return (
-    <div className="bg-primary-900 w-full py-4 min-h-[500px] z-[1] text-white relative">
+    <div className="bg-primary-900 w-full py-4 min-h-[500px] md:h-[500px] z-[1] text-white relative">
       <Image
         src={bg_6}
         alt="Vue panoramique sur l'océan au coucher du soleil"
@@ -77,10 +68,7 @@ export default function FlightSearch() {
             {/* From Location */}
             <LocationSelector
               label="De"
-              value={fromValue}
-              showOptions={showFromOptions}
-              onInputClick={() => handleInputClick("from")}
-              onClose={() => setShowFromOptions(false)}
+              value={locationData.from}
               onSelect={(option) => handleSelectLocation(option, "from")}
               type="from"
             />
@@ -88,14 +76,10 @@ export default function FlightSearch() {
             {/* To Location */}
             <LocationSelector
               label="Vers"
-              value={toValue}
-              showOptions={showToOptions}
-              onInputClick={() => handleInputClick("to")}
-              onClose={() => setShowToOptions(false)}
+              value={locationData.to}
               onSelect={(option) => handleSelectLocation(option, "to")}
               type="to"
               showSwapButton
-              rotationDegree={rotationDegree}
               onSwap={handleSwapLocations}
             />
 
@@ -104,28 +88,25 @@ export default function FlightSearch() {
               label="Départ"
               value={getDepartureDisplay()}
               showCalendar={showCalendar && activeField === "departure"}
-              onInputClick={() => handleInputClick("departure")}
               onClose={() => setShowCalendar(false)}
+              onInputClick={() => setShowCalendar(true)}
             />
 
             {/* Return Date - Note the flex-shrink-0 to prevent layout shift */}
-            <div className="md:flex-shrink-0">
-              <DateSelector
-                label="Retour"
-                value={getReturnDisplay()}
-                showCalendar={showCalendar && activeField === "return"}
-                onInputClick={() => handleInputClick("return")}
-                onClose={() => setShowCalendar(false)}
-                isVisible={returnFieldVisible}
-              />
-            </div>
+            <DateSelector
+              label="Retour"
+              value={getReturnDisplay()}
+              showCalendar={showCalendar && activeField === "return"}
+              onClose={() => setShowCalendar(false)}
+              onInputClick={() => setShowCalendar(true)}
+              isVisible={returnFieldVisible}
+            />
 
             {/* Travelers */}
             <TravelersSelector
               label="Voyageurs et classe"
               value={`${getTotalTravelers()} voyageurs, Économie`}
               showOptions={showTravelers}
-              onInputClick={() => handleInputClick("travelers")}
               onClose={() => setShowTravelers(false)}
               expandColumn={!returnFieldVisible}
             />
@@ -157,25 +138,6 @@ export default function FlightSearch() {
               onChildrenChange={setChildren}
               onChildAgeChange={handleChangeChildAge}
               onClose={() => setShowTravelers(false)}
-            />
-          )}
-
-          {/* From Location Dropdown */}
-          {showFromOptions && (
-            <LocationDropdown
-              onSelect={(option) => handleSelectLocation(option, "from")}
-              onClose={closeAllDropdowns}
-              position="left"
-            />
-          )}
-
-          {/* To Location Dropdown */}
-          {showToOptions && (
-            <LocationDropdown
-              onSelect={(option) => handleSelectLocation(option, "to")}
-              onClose={closeAllDropdowns}
-              position="left-20"
-              showExploreWorld
             />
           )}
 

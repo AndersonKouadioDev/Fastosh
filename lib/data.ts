@@ -1,6 +1,6 @@
 import { FaqAccordionItem, SiteInternationaux } from "@/types/index.type";
 import { CarRentalOption } from "@/types/location-voiture.type";
-import { Destination } from "@/types/vols.type";
+import { Destination, LocationValue } from "@/types/vols.type";
 
 
 export const faqs: FaqAccordionItem[] = [
@@ -613,3 +613,39 @@ export const carRentalOptions: CarRentalOption[] = [
         price: "179,693F",
     }
 ]
+
+
+export const locationOptions: LocationValue[] = [
+  { code: "ABJ", name: "Abidjan", country: "Côte d'Ivoire", type: "airport" },
+  { code: "NCE", name: "Nice", country: "France", type: "airport" },
+  { code: "MRS", name: "Marseille", country: "France", type: "airport" },
+  {
+    code: "KR",
+    name: "Corée du Sud",
+    country: "Corée du Sud",
+    type: "country",
+  },
+  {
+    code: "CI",
+    name: "Côte d'Ivoire",
+    country: "Côte d'Ivoire",
+    type: "country",
+  },
+  { code: "MJC", name: "Man", country: "Côte d'Ivoire", type: "airport" },
+  { code: "DAD", name: "Đà Nẵng", country: "Vietnam", type: "airport" },
+  { code: "TLN", name: "Toulon-Hyères", country: "France", type: "airport" },
+  {
+    code: "CXR",
+    name: "Cam Ranh (Nha Trang)",
+    country: "Vietnam",
+    type: "airport",
+  },
+  { code: "HUI", name: "Huế", country: "Vietnam", type: "airport" },
+  {
+    code: "DOH",
+    name: "Hamad International",
+    country: "Qatar",
+    type: "airport",
+  },
+  { code: "ISA", name: "Mont Isa", country: "Australie", type: "airport" },
+];

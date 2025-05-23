@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { LocationValue } from "@/types/vols.type";
+
 export type Person = {
   adults: number;
   children: number;
@@ -9,8 +11,6 @@ export type Person = {
 };
 
 export default function useControl() {
-  const [showFromOptions, setShowFromOptions] = useState(false);
-  const [showToOptions, setShowToOptions] = useState(false);
   const [showCalendar, setShowCalendar] = useState(false);
   const [showTravelers, setShowTravelers] = useState(false);
   const [adults, setAdults] = useState(2);
@@ -27,18 +27,24 @@ export default function useControl() {
   const [activeField, setActiveField] = useState<"departure" | "return">(
     "departure"
   );
-  const [rotationDegree, setRotationDegree] = useState(0);
   const [returnFieldVisible, setReturnFieldVisible] = useState(true);
 
-  const [fromValue, setFromValue] = useState({
-    code: "DOH",
-    name: "Hamad International",
-    country: "Qatar",
-  });
-  const [toValue, setToValue] = useState({
-    code: "ISA",
-    name: "Mont Isa",
-    country: "Australie",
+  const [locationData, setLocationData] = useState<{
+    from: LocationValue;
+    to: LocationValue;
+  }>({
+    from: {
+      code: "DOH",
+      name: "Hamad International",
+      country: "Qatar",
+      type: "airport",
+    },
+    to: {
+      code: "ISA",
+      name: "Mont Isa",
+      country: "Australie",
+      type: "airport",
+    },
   });
 
   // Update return field visibility based on trip type
@@ -62,78 +68,43 @@ export default function useControl() {
       // Remove extra children
       setChildrenAges(childrenAges.slice(0, children));
     }
-  }, [children]);
+  }, [children, childrenAges]);
 
-  const handleInputClick = (field: string) => {
-    if (field === "from") {
-      setShowFromOptions(true);
-      setShowToOptions(false);
-      setShowCalendar(false);
-      setShowTravelers(false);
-    } else if (field === "to") {
-      setShowToOptions(true);
-      setShowFromOptions(false);
-      setShowCalendar(false);
-      setShowTravelers(false);
-    } else if (field === "departure") {
-      setShowCalendar(true);
-      setShowFromOptions(false);
-      setShowToOptions(false);
-      setShowTravelers(false);
-      setActiveField("departure");
-    } else if (field === "return") {
-      if (tripType === "one-way") {
-        setTripType("round-trip");
-        setReturnFieldVisible(true);
-      }
-      setShowCalendar(true);
-      setShowFromOptions(false);
-      setShowToOptions(false);
-      setShowTravelers(false);
-      setActiveField("return");
-    } else if (field === "travelers") {
-      setShowTravelers(true);
-      setShowFromOptions(false);
-      setShowToOptions(false);
-      setShowCalendar(false);
-    }
-  };
-
-  const closeAllDropdowns = () => {
-    setShowFromOptions(false);
-    setShowToOptions(false);
-    setShowCalendar(false);
-    setShowTravelers(false);
-  };
-
+  // Echanger les destinations
   const handleSwapLocations = () => {
-    // Increment rotation by 180 degrees
-    setRotationDegree((prev) => prev + 180);
-
-    // Swap the values
-    const tempFrom = { ...fromValue };
-    setFromValue({ ...toValue });
-    setToValue({ ...tempFrom });
+    const temp = locationData;
+    setLocationData((prev) => ({
+      ...prev,
+      from: temp.to,
+      to: temp.from,
+    }));
   };
 
+  // Selectionner une destination
   const handleSelectLocation = (
     option: { code: string; name: string; country: string },
     type: "from" | "to"
   ) => {
     if (type === "from") {
-      setFromValue({
-        code: option.code,
-        name: option.name,
-        country: option.country,
-      });
-      setShowFromOptions(false);
+      setLocationData((prev) => ({
+        ...prev,
+        from: {
+          code: option.code,
+          name: option.name,
+          country: option.country,
+          type: "airport",
+        },
+      }));
     } else {
-      setToValue({
-        code: option.code,
-        name: option.name,
-        country: option.country,
-      });
-      setShowToOptions(false);
+      setLocationData((prev) => ({
+        ...prev,
+        to: {
+          code: option.code,
+          name: option.name,
+          country: option.country,
+          type: "airport",
+        },
+      }));
     }
   };
 
@@ -217,8 +188,6 @@ export default function useControl() {
   };
 
   return {
-    showFromOptions,
-    showToOptions,
     showCalendar,
     showTravelers,
     adults,
@@ -227,22 +196,14 @@ export default function useControl() {
     selectedDeparture,
     selectedReturn,
     isFlexibleDates,
-    selectedDepartureMonth,
-    selectedReturnMonth,
     tripType,
     activeField,
-    rotationDegree,
     returnFieldVisible,
-    fromValue,
-    toValue,
+    locationData,
     setAdults,
     setChildren,
-    setShowFromOptions,
-    setShowToOptions,
     setShowCalendar,
     setShowTravelers,
-    handleInputClick,
-    closeAllDropdowns,
     handleSwapLocations,
     handleSelectLocation,
     handleSelectDate,

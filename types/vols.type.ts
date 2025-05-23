@@ -15,3 +15,11 @@ export interface Destination {
   flightOptions: FlightOptionType[];
   startingPrice: string;
 }
+
+
+export type LocationValue = {
+  code: string;
+  name: string;
+  country: string;
+  type: "airport" | "country";
+};
