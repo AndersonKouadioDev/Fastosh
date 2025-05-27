@@ -11,7 +11,7 @@ import HotelOffersSection from "@/components/hotels/hotel-offers-section";
 
 export default function Hotel() {
   return (
-    <main>
+    <>
       <HotelSearch />
       <div className="flex min-h-screen px-6 py-8 lg:pb-16 lg:pt-8 max-w-screen-xl mx-auto flex-col gap-16 md:gap-24">
         <ContentSection />
@@ -37,6 +37,6 @@ export default function Hotel() {
           ]}
         />
       </div>
-    </main>
+    </>
   );
 }

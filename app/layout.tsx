@@ -59,7 +59,7 @@ export default function RootLayout({
       <body className={`${iBrand.variable} antialiased`}>
         <AppProvider>
           <Header />
-          {children}
+          <main className="min-h-[500px]">{children}</main>
           <Footer />
         </AppProvider>
       </body>

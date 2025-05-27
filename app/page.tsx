@@ -7,7 +7,7 @@ import FlightSearch from "@/components/vols/flight-search";
 
 export default function Home() {
   return (
-    <main>
+    <>
       <FlightSearch />
       <div className="flex min-h-screen px-6 py-8 lg:pb-16 lg:pt-8 max-w-screen-xl mx-auto flex-col gap-16 md:gap-24">
         <NavigationCta />
@@ -20,6 +20,6 @@ export default function Home() {
         <Faqs />
         <SiteInternationaux />
       </div>
-    </main>
+    </>
   );
 }
