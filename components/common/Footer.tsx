@@ -5,6 +5,7 @@ import type React from "react";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
+import { menuItems } from "@/lib/data";
 
 interface DropdownProps {
   title: string;
@@ -63,6 +64,18 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
+            <div className="mt-4">
+              <h2 className="text-base font-bold mb-2 text-secondary">Pages</h2>
+              <ul className="space-y-2 text-sm font-bold">
+                {menuItems.desktop.map((item, index) => (
+                  <li key={`${item}-${index}`}>
+                    <Link href={item.path} className="hover:underline">
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           <div className="col-span-1">

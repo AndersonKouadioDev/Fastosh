@@ -21,70 +21,19 @@ import {
 } from "@heroui/react";
 
 import { usePathname } from "next/navigation";
-import {
-  BedDouble,
-  Car,
-  Contact,
-  Flag,
-  Globe,
-  Heart,
-  HelpCircle,
-  Menu,
-  Plane,
-  UserCircle,
-  Users,
-} from "lucide-react";
+import { Heart, Menu, UserCircle } from "lucide-react";
 import LinkNext from "next/link";
 import ThemeSwitcher from "./ThemeSwitcher";
 import Logo from "./Logo";
 import TravelNav from "./TravelNav";
 import LoginModal from "@/components/auth/login/LoginModal";
+import { menuItems } from "@/lib/data";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathName = usePathname();
   const isActive = (path: string) => pathName === path;
 
-  const menuItems = {
-    desktop: [
-      {
-        name: "A propos de Fastosh",
-        path: "/apropos-de",
-        icone: Users,
-      },
-      {
-        name: "Contactez-nous",
-        path: "/contact",
-        icone: Contact,
-      },
-    ],
-    mobile: [
-      { name: "Vols", path: "/vols", icone: Plane },
-      {
-        name: "Hôtels",
-        path: "/hotels",
-        icone: BedDouble,
-      },
-      {
-        name: "Location de voiture",
-        path: "/location-de-voiture",
-        icone: Car,
-      },
-    ],
-    other: [
-      {
-        name: "Paramètres régionaux",
-        path: "/parametres-regionaux",
-        icone: Flag,
-      },
-      {
-        name: "Explorez le monde entier",
-        path: "/explorer",
-        icone: Globe,
-      },
-      { name: "Aide", path: "/aide", icone: HelpCircle },
-    ],
-  };
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   function HeaderMenu({ className }: { className?: string }) {
@@ -115,7 +64,31 @@ export default function Header() {
                   <item.icone
                     size={20}
                     className={cn(
-                      "text-primary",
+                      "text-primary dark:text-white",
+                      isActive(item.path) ? "font-bold" : ""
+                    )}
+                  />
+                  {item.name}
+                </Link>
+              </DropdownItem>
+            ))}
+          </DropdownSection>
+          <DropdownSection showDivider>
+            {menuItems.desktop.map((item, index) => (
+              <DropdownItem key={`${item}-${index}`}>
+                <Link
+                  className={cn(
+                    "w-full flex items-center gap-2 text-foreground",
+                    isActive(item.path) ? "font-bold" : ""
+                  )}
+                  href={item.path}
+                  size="sm"
+                  as={LinkNext}
+                >
+                  <item.icone
+                    size={20}
+                    className={cn(
+                      "text-foreground",
                       isActive(item.path) ? "font-bold" : ""
                     )}
                   />
@@ -158,13 +131,13 @@ export default function Header() {
   }, [pathName]);
 
   return (
-    <div className="bg-primary-900 text-white sm:py-4 lg:p-8">
+    <div className="bg-primary-500 text-white sm:py-4 lg:p-8">
       <Navbar
         isMenuOpen={isMenuOpen}
         onMenuOpenChange={setIsMenuOpen}
         maxWidth="xl"
         position="static"
-        className="bg-primary-900"
+        className="bg-primary-500"
       >
         {/* Start Desktop */}
         <NavbarContent>
@@ -179,23 +152,10 @@ export default function Header() {
           </NavbarBrand>
         </NavbarContent>
         {/* Center Desktop */}
-        <NavbarContent className="hidden sm:flex gap-4" justify="center">
-          {menuItems.desktop.map((item, index) => (
-            <NavbarItem key={`${item}-${index}`}>
-              <Link
-                href={item.path}
-                className={cn(
-                  "text-white",
-                  isActive(item.path) ? "font-bold" : ""
-                )}
-                size="sm"
-                as={LinkNext}
-              >
-                {item.name}
-              </Link>
-            </NavbarItem>
-          ))}
-        </NavbarContent>
+        <NavbarContent
+          className="hidden lg:flex gap-4"
+          justify="center"
+        ></NavbarContent>
         {/* End Desktop */}
         <NavbarContent justify="end">
           <NavbarItem>
@@ -211,7 +171,7 @@ export default function Header() {
             </Button>
           </NavbarItem>
 
-          <NavbarItem className="hidden sm:block">
+          <NavbarItem className="hidden">
             <ThemeSwitcher />
           </NavbarItem>
 

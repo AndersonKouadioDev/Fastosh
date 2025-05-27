@@ -8,7 +8,6 @@ type TravelersDropdownProps = {
   childrenAges: number[];
   onAdultsChange: (value: number) => void;
   onChildrenChange: (value: number) => void;
-  onChildAgeChange: (index: number, age: number) => void;
   onClose: () => void;
 };
 
@@ -18,7 +17,6 @@ export default function TravelersDropdown({
   childrenAges,
   onAdultsChange,
   onChildrenChange,
-  onChildAgeChange,
   onClose,
 }: TravelersDropdownProps) {
   return (
@@ -90,9 +88,9 @@ export default function TravelersDropdown({
                 <div className="relative">
                   <select
                     value={age}
-                    onChange={(e) =>
-                      onChildAgeChange(index, Number.parseInt(e.target.value))
-                    }
+                    // onChange={(e) =>
+                    //   // onChildAgeChange(index, Number.parseInt(e.target.value))
+                    // }
                     className="w-full p-2 pr-10 border border-gray-300 rounded-md appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500"
                   >
                     {Array.from({ length: 18 }, (_, i) => i).map(

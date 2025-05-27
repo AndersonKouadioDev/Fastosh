@@ -32,8 +32,8 @@ export default function TripPlannerTabs() {
             className={cn(
               "px-4 py-1 w-54 sm:w-fit cursor-pointer rounded-md text-sm font-medium shrink-0",
               {
-                "bg-blue-900 text-white": activeTab === item.value,
-                "bg-transparent border border-blue-900 dark:border-gray-500 hover:bg-foreground/10":
+                "bg-primary text-white": activeTab === item.value,
+                "bg-transparent border border-primary dark:border-gray-500 hover:bg-foreground/10":
                   activeTab !== item.value,
               }
             )}

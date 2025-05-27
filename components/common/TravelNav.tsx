@@ -49,8 +49,8 @@ export default function TravelNav() {
               ${
                 isActive(option.link) ||
                 (pathname == "/" && option.id == "vols")
-                  ? "bg-primary text-white"
-                  : "text-white border border-primary hover:bg-primary-800"
+                  ? "bg-secondary text-white"
+                  : "text-white border border-secondary hover:bg-secondary-600"
               }
             `}
           >

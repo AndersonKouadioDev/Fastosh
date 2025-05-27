@@ -1,7 +1,48 @@
 import { FaqAccordionItem, SiteInternationaux } from "@/types/index.type";
 import { CarRentalOption } from "@/types/location-voiture.type";
 import { Destination, LocationValue } from "@/types/vols.type";
+import { Users, Contact, Plane, BedDouble, Car, Flag, Globe, HelpCircle } from "lucide-react";
 
+export const menuItems = {
+    desktop: [
+      {
+        name: "A propos de Fastosh",
+        path: "/apropos-de",
+        icone: Users,
+      },
+      {
+        name: "Contactez-nous",
+        path: "/contact",
+        icone: Contact,
+      },
+    ],
+    mobile: [
+      { name: "Vols", path: "/vols", icone: Plane },
+      {
+        name: "Hôtels",
+        path: "/hotels",
+        icone: BedDouble,
+      },
+      {
+        name: "Location de voiture",
+        path: "/location-de-voiture",
+        icone: Car,
+      },
+    ],
+    other: [
+      {
+        name: "Paramètres régionaux",
+        path: "/parametres-regionaux",
+        icone: Flag,
+      },
+      {
+        name: "Explorez le monde entier",
+        path: "/explorer",
+        icone: Globe,
+      },
+      { name: "Aide", path: "/aide", icone: HelpCircle },
+    ],
+  };
 
 export const faqs: FaqAccordionItem[] = [
     {
