@@ -12,15 +12,15 @@ export type Person = {
   rooms: number;
 };
 
-export default function HotelSearch() {
+export default function LocationDeVoitureSearch() {
   const [destination, setDestination] = useState("");
 
   return (
     <div className="relative w-full">
       <div className="relative w-full h-[500px] z-[1]">
         <Image
-          src="/images/background/bg_2.jpg"
-          alt="Hôtel de rêve"
+          src="/images/background/bg_5.jpg"
+          alt="Location de voiture"
           fill
           className="object-cover"
           priority
@@ -28,7 +28,7 @@ export default function HotelSearch() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/20" />
         <div className="absolute inset-0 flex flex-col gap-4 md:gap-8 items-center justify-center">
           <h1 className="text-3xl md:text-6xl font-bold text-white text-center px-4 drop-shadow-md">
-            Trouvez l&apos;hôtel de vos rêves dès aujourd&apos;hui
+            Trouvez les meilleures offres pour louer une voiture
           </h1>
           <SearchForm
             destination={destination}
